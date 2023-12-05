@@ -11,6 +11,13 @@ public class ShopfrontApplicationTests {
 
     @Test
     public void contextLoads() {
+
+livenessProbe:
+initialDelaySeconds: 2
+periodSeconds: 5
+httpGet:
+path: /health
+port: 9876
     }
 
 }
