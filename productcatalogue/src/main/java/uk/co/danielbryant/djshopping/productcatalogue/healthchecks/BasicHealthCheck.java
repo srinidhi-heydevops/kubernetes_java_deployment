@@ -13,5 +13,12 @@ public class BasicHealthCheck extends HealthCheck {
     @Override
     protected Result check() throws Exception {
         return Result.healthy("Ok with version: " + version);
+        
+livenessProbe:
+initialDelaySeconds: 2
+periodSeconds: 5
+httpGet:
+path: /health
+port: 9876
     }
 }
